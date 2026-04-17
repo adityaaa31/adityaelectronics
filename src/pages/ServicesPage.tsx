@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Wrench, ShieldCheck, MapPin } from 'lucide-react';
+import { Wrench, ShieldCheck } from 'lucide-react';
 import api from '../lib/api';
 import toast from 'react-hot-toast';
 

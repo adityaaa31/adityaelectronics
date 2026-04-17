@@ -1,5 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { 
+  Home, 
+  Wrench, 
+  MessageSquare, 
+  User, 
+  LogOut, 
+  Menu, 
+  X, 
+  Phone,
+  MapPin,
+  LayoutDashboard,
+  ShoppingBag,
+  Sun,
+  Moon
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useAuthStore } from './store/authStore';
+import { useThemeStore } from './store/themeStore';
+import { LOGO_URL } from './constants';
 
 // Error boundary to prevent white screen crashes
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
@@ -24,26 +44,6 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
     return this.props.children;
   }
 }
-import { Toaster } from 'react-hot-toast';
-import { 
-  Home, 
-  Wrench, 
-  MessageSquare, 
-  User, 
-  LogOut, 
-  Menu, 
-  X, 
-  Phone,
-  MapPin,
-  LayoutDashboard,
-  ShoppingBag,
-  Sun,
-  Moon
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { useAuthStore } from './store/authStore';
-import { useThemeStore } from './store/themeStore';
-import { LOGO_URL } from './constants';
 
 // Pages
 const HomePage = React.lazy(() => import('./pages/HomePage'));

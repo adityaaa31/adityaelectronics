@@ -113,7 +113,7 @@ const HomePage = () => {
                 motherboards, backlights, and universal remotes.
               </p>
               <div className="space-y-4">
-                {['10+ Years Experience', '5000+ Happy Customers', 'Genuine Spare Parts', 'Doorstep Service'].map((item, i) => (
+                {['25+ Years Experience', '5000+ Happy Customers', 'Genuine Spare Parts', 'Doorstep Service'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
                       <div className="w-2 h-2 bg-red-600 dark:bg-red-500 rounded-full" />
