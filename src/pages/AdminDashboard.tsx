@@ -599,7 +599,6 @@ const ManageBookings = () => {
                   <button onClick={() => updateStatus(b.id, 'rejected')} className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg"><XCircle size={20} /></button>
                   <button onClick={() => handleDelete(b.id)} className="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"><Trash2 size={20} /></button>
                 </td>
-                </td>
               </tr>
             ))}
           </tbody>
