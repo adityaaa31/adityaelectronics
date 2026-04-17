@@ -261,7 +261,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (path === '/bookings') {
       if (method === 'POST') {
         const { user_id, service_id, details, full_name, phone_number, email, address, locality } = req.body;
-        const result = await run('INSERT INTO bookings (user_id,service_id,details,full_name,phone_number,email,address,locality) VALUES (?,?,?,?,?,?,?,?)', [user_id || null, service_id, details, full_name, phone_number, email, address, locality]);
+        const result = await run('INSERT INTO bookings (user_id,service_id,details,full_name,phone_number,email,address,locality) VALUES (?,?,?,?,?,?,?,?)', [user_id || null, service_id || null, details, full_name, phone_number, email, address, locality]);
         return res.json({ id: result.id });
       }
       if (method === 'GET') {

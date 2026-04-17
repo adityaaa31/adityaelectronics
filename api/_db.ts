@@ -43,7 +43,7 @@ export async function initDB() {
   await p.execute(`CREATE TABLE IF NOT EXISTS products (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, description TEXT, price DECIMAL(10,2), category_id INT, warranty VARCHAR(255))`);
   await p.execute(`CREATE TABLE IF NOT EXISTS product_images (id INT AUTO_INCREMENT PRIMARY KEY, product_id INT, image_url TEXT NOT NULL)`);
   await p.execute(`CREATE TABLE IF NOT EXISTS services (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, description TEXT, price DECIMAL(10,2), warranty VARCHAR(255), image_url TEXT)`);
-  await p.execute(`CREATE TABLE IF NOT EXISTS bookings (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, service_id INT, details TEXT, status VARCHAR(20) DEFAULT 'pending', full_name VARCHAR(255), phone_number VARCHAR(20), email VARCHAR(255), address TEXT, locality VARCHAR(255), created_at DATETIME DEFAULT CURRENT_TIMESTAMP)`);
+  await p.execute(`CREATE TABLE IF NOT EXISTS bookings (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, service_id INT NULL, details TEXT, status VARCHAR(20) DEFAULT 'pending', full_name VARCHAR(255), phone_number VARCHAR(20), email VARCHAR(255), address TEXT, locality VARCHAR(255), created_at DATETIME DEFAULT CURRENT_TIMESTAMP)`);
   await p.execute(`CREATE TABLE IF NOT EXISTS chats (id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, product_id INT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, UNIQUE(user_id, product_id))`);
   await p.execute(`CREATE TABLE IF NOT EXISTS messages (id INT AUTO_INCREMENT PRIMARY KEY, chat_id INT, sender_id INT, message TEXT NOT NULL, created_at DATETIME DEFAULT CURRENT_TIMESTAMP)`);
 }

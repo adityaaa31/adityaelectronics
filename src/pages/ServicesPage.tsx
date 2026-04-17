@@ -20,7 +20,6 @@ const ServicesPage = () => {
   React.useEffect(() => {
     api.get('/services').then(res => {
       setServices(Array.isArray(res.data) ? res.data : []);
-      if (Array.isArray(res.data) && res.data.length > 0) setBookingForm(prev => ({ ...prev, service_id: res.data[0].id }));
     }).finally(() => setLoading(false));
 
   }, []);
@@ -103,13 +102,13 @@ const ServicesPage = () => {
             <h3 className="text-2xl font-bold mb-6 dark:text-white">Book Home Service</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Select Service</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Select Service (Optional)</label>
                 <select 
                   value={bookingForm.service_id}
                   onChange={e => setBookingForm({...bookingForm, service_id: e.target.value})}
                   className="w-full p-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl outline-none focus:ring-2 focus:ring-red-500 dark:text-white"
-                  required
                 >
+                  <option value="">-- Select a service --</option>
                   {services.map((s: any) => <option key={s.id} value={s.id} className="dark:bg-gray-900">{s.name}</option>)}
                 </select>
               </div>
