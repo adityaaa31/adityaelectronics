@@ -19,7 +19,7 @@ const HomePage = () => {
           <img
             src="/herosection.png"
             alt="Switched off LCD TV"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent" />
